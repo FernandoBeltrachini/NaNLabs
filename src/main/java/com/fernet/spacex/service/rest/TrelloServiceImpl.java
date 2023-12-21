@@ -21,12 +21,12 @@ public class TrelloServiceImpl implements TrelloService {
 
     @Value("${trello.url}")
     private String baseUrl;
-    @Value("${key}")
+    @Value("${trello.key}")
     private String key;
-    @Value("${token}")
+    @Value("${trello.token}")
     private String token;
 
-    @Value("${board}")
+    @Value("${trello.board}")
     private String board;
 
     /**
