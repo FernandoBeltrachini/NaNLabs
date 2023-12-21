@@ -1,6 +1,7 @@
 package com.fernet.spacex.service;
 
 import com.fernet.spacex.controller.request.CreateCardRequest;
+import com.fernet.spacex.model.CardType;
 import com.fernet.spacex.service.rest.TrelloService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,8 +37,8 @@ public class CardServiceImplTest {
 
     @Test
     void createCardOk() {
-        CreateCardRequest createCardRequest = new CreateCardRequest(); // Create your request object
-
+        CreateCardRequest createCardRequest = new CreateCardRequest();
+        createCardRequest.setType(CardType.bug);
         when(createCardHandler.getCardParameters(any())).thenReturn(createBug);
         when(createBug.getParameters(any())).thenReturn(new HashMap<>());
 
@@ -48,11 +49,21 @@ public class CardServiceImplTest {
 
     @Test
     void createCardThrowsResourceAccessException() {
-        CreateCardRequest createCardRequest = new CreateCardRequest(); // Create your request object
-
+        CreateCardRequest createCardRequest = new CreateCardRequest();
+        createCardRequest.setType(CardType.issue);
         when(createCardHandler.getCardParameters(any())).thenThrow(ResourceAccessException.class);
 
         assertThrows(ResourceAccessException.class, () -> cardService.createCard(createCardRequest));
 
+    }
+
+    @Test
+    void createCardShouldFailDueNullCardType() {
+        assertThrows(IllegalArgumentException.class, () -> cardService.createCard(new CreateCardRequest()));
+    }
+
+    @Test
+    void createCardShouldFailDueNullRequest() {
+        assertThrows(IllegalArgumentException.class, () -> cardService.createCard(null));
     }
 }
