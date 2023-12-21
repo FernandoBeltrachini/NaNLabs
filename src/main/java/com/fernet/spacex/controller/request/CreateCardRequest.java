@@ -1,7 +1,6 @@
 package com.fernet.spacex.controller.request;
 
 import com.fernet.spacex.model.CardType;
-
 import com.fernet.spacex.service.model.CardCategory;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -11,7 +10,7 @@ import lombok.Data;
  */
 @Data
 public class CreateCardRequest {
-    @NotNull
+    @NotNull(message = "Card type is required")
     private CardType type;
     private String tittle;
     private String description;
