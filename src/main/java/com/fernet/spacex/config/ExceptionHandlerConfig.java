@@ -38,7 +38,7 @@ public class ExceptionHandlerConfig {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ErrorMessage handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
-        return new ErrorMessage(e.getMessage());
+        return new ErrorMessage(e.getBindingResult().getFieldError().getDefaultMessage());
     }
 
 }
