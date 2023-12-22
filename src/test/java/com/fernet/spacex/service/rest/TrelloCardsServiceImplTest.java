@@ -42,12 +42,13 @@ public class TrelloCardsServiceImplTest {
         parameters.put(ParamType.NAME, "Card Name");
         parameters.put(ParamType.DESCRIPTION, "Card Description");
         parameters.put(ParamType.MEMBERS, "MemberId");
+        parameters.put(ParamType.LABEL, "LABEL");
 
         trelloCardsService.createCard(parameters);
 
         verify(restTemplate, times(1))
                 .postForEntity("https://api.trello.com/1/cards?key=key&token=token&idList=listId&name=Card Name" +
-                        "&desc=Card Description&idMembers=MemberId", null, null);
+                        "&idLabels=LABEL&desc=Card Description&idMembers=MemberId", null, null);
     }
 
 }
