@@ -1,5 +1,6 @@
 package com.fernet.spacex.service.rest;
 
+import com.fernet.spacex.service.BoardService;
 import com.fernet.spacex.service.rest.model.TrelloLabelListItem;
 import com.fernet.spacex.service.rest.model.TrelloListItem;
 import org.springframework.beans.factory.annotation.Autowired;

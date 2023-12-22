@@ -2,7 +2,6 @@ package com.fernet.spacex.service;
 
 import com.fernet.spacex.controller.request.CreateCardRequest;
 import com.fernet.spacex.service.model.ParamType;
-import com.fernet.spacex.service.rest.ListsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

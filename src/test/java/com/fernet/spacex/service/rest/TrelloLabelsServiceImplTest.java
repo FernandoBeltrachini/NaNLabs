@@ -1,5 +1,6 @@
 package com.fernet.spacex.service.rest;
 
+import com.fernet.spacex.service.BoardService;
 import com.fernet.spacex.service.rest.model.TrelloLabelListItem;
 import com.fernet.spacex.service.rest.model.TrelloLabelsColors;
 import org.junit.jupiter.api.BeforeEach;
