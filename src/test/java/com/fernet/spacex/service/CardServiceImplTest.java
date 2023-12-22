@@ -2,7 +2,6 @@ package com.fernet.spacex.service;
 
 import com.fernet.spacex.controller.request.CreateCardRequest;
 import com.fernet.spacex.model.CardType;
-import com.fernet.spacex.service.rest.CardsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

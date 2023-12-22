@@ -1,4 +1,4 @@
-package com.fernet.spacex.service.rest;
+package com.fernet.spacex.service;
 
 import java.util.List;
 

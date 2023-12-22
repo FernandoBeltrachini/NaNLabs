@@ -1,5 +1,7 @@
 package com.fernet.spacex.service.rest;
 
+import com.fernet.spacex.service.BoardService;
+import com.fernet.spacex.service.LabelsService;
 import com.fernet.spacex.service.rest.model.TrelloLabelListItem;
 import com.fernet.spacex.service.rest.model.TrelloLabelsColors;
 import com.fernet.spacex.service.rest.model.TrelloListItem;
@@ -9,12 +11,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import static com.fernet.spacex.service.rest.TrelloUtils.createBoardsUrls;
 import static com.fernet.spacex.service.rest.TrelloUtils.createResourcePathUrl;
 import static com.fernet.spacex.service.rest.model.TrelloResource.labels;
 import static java.util.Objects.isNull;

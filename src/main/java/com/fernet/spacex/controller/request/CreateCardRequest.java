@@ -2,7 +2,6 @@ package com.fernet.spacex.controller.request;
 
 import com.fernet.spacex.model.CardType;
 import com.fernet.spacex.service.model.CardCategory;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 

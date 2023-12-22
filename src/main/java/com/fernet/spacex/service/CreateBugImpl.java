@@ -3,9 +3,6 @@ package com.fernet.spacex.service;
 import com.fernet.spacex.controller.request.CreateCardRequest;
 import com.fernet.spacex.service.model.CardCategory;
 import com.fernet.spacex.service.model.ParamType;
-import com.fernet.spacex.service.rest.LabelsService;
-import com.fernet.spacex.service.rest.ListsService;
-import com.fernet.spacex.service.rest.MembersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
