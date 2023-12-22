@@ -1,7 +1,7 @@
 package com.fernet.spacex.service;
 import com.fernet.spacex.controller.request.CreateCardRequest;
 import com.fernet.spacex.service.model.ParamType;
-import com.fernet.spacex.service.rest.TrelloService;
+import com.fernet.spacex.service.rest.ListsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -15,7 +15,7 @@ import static org.mockito.Mockito.*;
 
 public class CreateIssueImplTest {
     @Mock
-    private TrelloService trelloService;
+    private ListsService trelloListsService;
 
     @InjectMocks
     private CreateIssueImpl createIssue;
@@ -58,7 +58,7 @@ public class CreateIssueImplTest {
 
     @Test
     void getCardParametersShouldRunOk() {
-        when(trelloService.getListByName(CreateIssueImpl.TO_DO_LIST_NAME)).thenReturn("listId");
+        when(trelloListsService.getListByNameOrCreateNewOne(CreateIssueImpl.TO_DO_LIST_NAME)).thenReturn("listId");
 
         CreateCardRequest createCardRequest = new CreateCardRequest();
         createCardRequest.setTittle("Sample Title");
@@ -70,5 +70,6 @@ public class CreateIssueImplTest {
         assertEquals("listId", response.get(ParamType.LIST));
         assertEquals("Sample Title", response.get(ParamType.NAME));
         assertEquals("Sample Description", response.get(ParamType.DESCRIPTION));
+        verify(trelloListsService, times(1)).getListByNameOrCreateNewOne(anyString());
     }
 }
