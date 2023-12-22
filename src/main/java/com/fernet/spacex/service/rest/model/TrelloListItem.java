@@ -13,4 +13,5 @@ import lombok.NoArgsConstructor;
 public class TrelloListItem {
     private String id;
     private String name;
+    private String idBoard;
 }

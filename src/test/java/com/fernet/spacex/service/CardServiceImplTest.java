@@ -2,7 +2,7 @@ package com.fernet.spacex.service;
 
 import com.fernet.spacex.controller.request.CreateCardRequest;
 import com.fernet.spacex.model.CardType;
-import com.fernet.spacex.service.rest.TrelloService;
+import com.fernet.spacex.service.rest.CardsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -22,7 +22,7 @@ public class CardServiceImplTest {
     private CreateCardHandler createCardHandler;
 
     @Mock
-    private TrelloService trelloService;
+    private CardsService trelloCardsService;
 
     @Mock
     private CreateBugImpl createBug;
@@ -44,7 +44,7 @@ public class CardServiceImplTest {
 
         cardService.createCard(createCardRequest);
 
-        verify(trelloService, times(1)).createCard(any());
+        verify(trelloCardsService, times(1)).createCard(any());
     }
 
     @Test
